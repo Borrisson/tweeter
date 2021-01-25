@@ -54,7 +54,7 @@
         <h2>Compose Tweet</h2>
         <form method="POST" action="/tweets">
           <label for="tweet-text">What are you humming about?</label>
-          <textarea name="text" id="tweet-text"></textarea>
+          <textarea name="text" maxlength="140" id="tweet-text"></textarea>
           <div>
             <button class="btn" type="submit">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
@@ -62,6 +62,7 @@
         </form>
       </section>
 
-    </main>
+		</main>
+		<script src="./scripts/composer-char-counter.js"></script>
 	</body>
 </html>
