@@ -38,16 +38,19 @@ $("document").ready(function () {
 
 	$("form").on("submit", function (e) {
 		e.preventDefault();
-		const data = $(this).serialize();
-		$("textarea").val("");
-		$.ajax("/tweets", { method: "POST", data: data }).then(loadTweets);
-  });
-  
-  const loadTweets = function () {
-    $.ajax("/tweets", { method: "GET" }).
-    then(renderTweets);
-  };
+		let text = $("textarea");
+		if (text.val() && text.val().length <= 140) {
+			const data = $(this).serialize();
+      text.val("");
+			$.ajax("/tweets", { method: "POST", data: data }).then(loadTweets);
+		} else {
+      console.log('no luck');
+		}
+	});
 
-  loadTweets();
+	const loadTweets = function () {
+		$.ajax("/tweets", { method: "GET" }).then(renderTweets);
+	};
+
+	loadTweets();
 });
-
