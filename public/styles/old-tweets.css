@@ -44,6 +44,14 @@ footer {
 	align-self: flex-end;
 }
 
+.tag-handle {
+	color:#f4f1ec;
+}
+
 .old-tweets:hover {
 	box-shadow: 10px 10px #c5cbe3;
+}
+
+.old-tweets:hover .tag-handle {
+	color: #c2afaf;
 }
