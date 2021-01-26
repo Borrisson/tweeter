@@ -32,7 +32,7 @@ $("document").ready(function () {
 	const renderTweets = function (tweetDB) {
 		for (let tweetObj of tweetDB) {
 			const parsedTweet = createTweetElement(tweetObj);
-			$("#tweets-container").append(parsedTweet);
+			$("#tweets-container").prepend(parsedTweet);
 		}
 	};
 
@@ -40,9 +40,14 @@ $("document").ready(function () {
 		e.preventDefault();
 		const data = $(this).serialize();
 		$("textarea").val("");
-		$.ajax("/tweets", { method: "POST", data: data }).then(function (tweet) {
-			console.log(success);
-		});
-	});
+		$.ajax("/tweets", { method: "POST", data: data }).then(loadTweets);
+  });
+  
+  const loadTweets = function () {
+    $.ajax("/tweets", { method: "GET" }).
+    then(renderTweets);
+  };
 
+  loadTweets();
 });
+
