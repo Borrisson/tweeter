@@ -3,6 +3,13 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
+
+const escape = function (str) {
+	let div = document.createElement("div");
+	div.appendChild(document.createTextNode(str));
+	return div.innerHTML;
+};
+
 $("document").ready(function () {
 	const createTweetElement = function ({ user, content, created_at }) {
 		const postTime = moment.unix(created_at).fromNow();
@@ -10,16 +17,16 @@ $("document").ready(function () {
 		return `<article class="old-tweets">
     <header class="profile-container">
     <div class="individual-profile">
-    <img src="${user.avatars}" alt="" />
-    <p>${user.name}</p>
+    <img src="${escape(user.avatars)}" alt="" />
+    <p>${escape(user.name)}</p>
     </div>
-    <p class="tag-handle">${user.handle}</p>
+    <p class="tag-handle">${escape(user.handle)}</p>
     </header>
     <p class="tweet-message">
-    ${content.text}
+    ${escape(content.text)}
     </p>
     <footer class="profile-container">
-    <p class="date-posted">${postTime}</p>
+    <p class="date-posted">${escape(postTime)}</p>
     <div class="profile-container div">
     <a href="">a</a>
     <a href="">b</a>
@@ -47,11 +54,14 @@ $("document").ready(function () {
 		e.preventDefault();
 		let text = $("textarea");
 		if (text.val() && text.val().length <= 140) {
-			const data = $(this).serialize();
+      $('#user-input-alert').removeClass('shown').text("");
+      const data = $(this).serialize();
 			text.val("");
 			$.ajax("/tweets", { method: "POST", data: data }).then(loadTweets);
 		} else {
-			alert("The message must be between 1 and 140 characters");
+      $('#user-input-alert').addClass('shown').text("Please write a message between 1 and 140 characters").slideDown(600, function(){
+
+      });
 		}
 	});
 
