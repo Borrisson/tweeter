@@ -1,0 +1,49 @@
+.old-tweets {
+	display: flex;
+	flex-direction: column;
+	margin-top: 45px;
+	border: 6px solid #555149;
+}
+
+.profile-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin: 20px;
+}
+
+.individual-profile {
+	display: flex;
+}
+
+.profile-container .div {
+	margin: 5px;
+}
+
+.tweet-message {
+	display: flex;
+	word-wrap: normal;
+	margin: 20px;
+  margin-bottom: 40px;
+  font-weight: 600;
+}
+
+img {
+	object-fit: contain;
+	margin-right: 20px;
+}
+
+footer {
+	margin: 0px;
+	border-top: 6px solid #555149;
+}
+
+.date-posted {
+	display: flex;
+	margin: 0;
+	align-self: flex-end;
+}
+
+.old-tweets:hover {
+	box-shadow: 10px 10px #c5cbe3;
+}
