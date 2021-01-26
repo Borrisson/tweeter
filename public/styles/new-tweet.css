@@ -9,8 +9,8 @@ form {
 	outline: none;
 	border-bottom: 6px solid #555149;
 	background-color: inherit;
-  resize: none;
-  margin-top: 10px;
+	resize: none;
+	margin-top: 10px;
 }
 
 form div {
@@ -24,8 +24,13 @@ form div {
 .btn {
 	background-color: #4056a1;
 	border: thin;
-  padding-left: 10px;
-  padding-right: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
 	color: #f4f1ec;
 	box-sizing: content-box;
+}
+
+.shown {
+	background-color: #dc3545;
+	padding:40px
 }
