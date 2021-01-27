@@ -77,7 +77,7 @@ $("document").ready(function () {
 		});
 	};
 
-	$('a[href="#top"]').on('click', function() {
+	$('#message-button').on('click', function() {
 		if ($('#tweet-form').is(':visible')) {
 			$('#tweet-form').slideUp(600);
 		} else {
