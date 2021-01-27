@@ -77,5 +77,14 @@ $("document").ready(function () {
 		});
 	};
 
+	$('a[href="#top"]').on('click', function() {
+		if ($('#tweet-form').is(':visible')) {
+			$('#tweet-form').slideUp(600);
+		} else {
+			$('#tweet-form').slideDown(600);
+			$('textarea').focus();
+		}
+	})
+
 	loadTweets();
 });
