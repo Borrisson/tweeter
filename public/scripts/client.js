@@ -28,9 +28,9 @@ $("document").ready(function () {
     <footer class="profile-container">
     <p class="date-posted">${escape(postTime)}</p>
     <div class="profile-container div">
-    <a href="">a</a>
-    <a href="">b</a>
-    <a href="">c</a>
+    <a href=""><img src="/images/flag.png" alt=""></a>
+    <a href=""><img src="/images/share.png" alt=""></a>
+    <a href=""><img src="/images/heart.png" alt=""></a>
     </div>
     </footer>
     </article>`;
@@ -54,14 +54,16 @@ $("document").ready(function () {
 		e.preventDefault();
 		let text = $("textarea");
 		if (text.val() && text.val().length <= 140) {
-      $('#user-input-alert').removeClass('shown').text("");
-      const data = $(this).serialize();
+			$("#user-input-alert")
+				.slideUp(600, function () {});
+			const data = $(this).serialize();
 			text.val("");
 			$.ajax("/tweets", { method: "POST", data: data }).then(loadTweets);
 		} else {
-      $('#user-input-alert').addClass('shown').text("Please write a message between 1 and 140 characters").slideDown(600, function(){
-
-      });
+			$("#user-input-alert")
+				.addClass("shown")
+				.text("Please write a message between 1 and 140 characters")
+				.slideDown(600, function () {});
 		}
 	});
 
