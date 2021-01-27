@@ -35,6 +35,7 @@ form div {
 }
 
 .shown {
-	background-color: #dc3545;
+	border: 5px solid #dc3545;
+	border-radius: 5px;
 	padding:40px
 }
