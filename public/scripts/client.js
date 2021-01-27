@@ -39,9 +39,8 @@ $("document").ready(function () {
 	const renderTweets = function (tweetDB) {
 		let parsedTweet;
 
-		if (tweetDB.length - $(".old-tweets").length === 1) {
-			parsedTweet = tweetDB.pop();
-			$("#tweets-container").prepend(createTweetElement(parsedTweet));
+		if (!Array.isArray(tweetDB)) {
+			$("#tweets-container").prepend(createTweetElement(tweetDB));
 		} else {
 			for (let tweetObj of tweetDB) {
 				parsedTweet = createTweetElement(tweetObj);
@@ -54,11 +53,12 @@ $("document").ready(function () {
 		e.preventDefault();
 		let text = $("textarea");
 		if (text.val() && text.val().length <= 140) {
-			$("#user-input-alert")
-				.slideUp(600, function () {});
+			$("#user-input-alert").slideUp(600, function () {});
 			const data = $(this).serialize();
 			text.val("");
-			$.ajax("/tweets", { method: "POST", data: data }).then(loadTweets);
+			$.ajax("/tweets", { method: "POST", data: data }).then((data) => {
+				loadTweets(true);
+			});
 		} else {
 			$("#user-input-alert")
 				.addClass("shown")
@@ -67,8 +67,14 @@ $("document").ready(function () {
 		}
 	});
 
-	const loadTweets = function () {
-		$.ajax("/tweets", { method: "GET" }).then(renderTweets);
+	const loadTweets = function (isPOST) {
+		$.ajax("/tweets", { method: "GET" }).then((data) => {
+			if (isPOST) {
+				renderTweets(data.pop());
+			} else {
+				renderTweets(data);
+			}
+		});
 	};
 
 	loadTweets();
