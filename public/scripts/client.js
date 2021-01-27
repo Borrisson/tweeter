@@ -56,7 +56,7 @@ $("document").ready(function () {
 			$("#user-input-alert").slideUp(600, function () {});
 			const data = $(this).serialize();
 			text.val("");
-			$.ajax("/tweets", { method: "POST", data: data }).then((data) => {
+			$.ajax("/tweets", { method: "POST", data: data }).done((data) => {
 				loadTweets(true);
 			});
 		} else {
@@ -68,7 +68,7 @@ $("document").ready(function () {
 	});
 
 	const loadTweets = function (isPOST) {
-		$.ajax("/tweets", { method: "GET" }).then((data) => {
+		$.ajax("/tweets", { method: "GET" }).done((data) => {
 			if (isPOST) {
 				renderTweets(data.pop());
 			} else {
