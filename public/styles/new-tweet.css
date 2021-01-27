@@ -30,7 +30,7 @@ form div {
 	box-sizing: content-box;
 }
 
-#user-input-alert {
+.hidden {
 	display: none;
 }
 
