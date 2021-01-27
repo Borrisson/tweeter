@@ -35,3 +35,18 @@ body {
   width: 90%;
   align-self: center;
 }
+
+main {
+  margin-top: 30px;
+}
+
+
+@media (min-width: 1024px) {
+  body {
+    flex-direction: row;
+    margin-top: 200px;
+  }
+  main {
+    margin: 0 150px 0 0;
+  }
+}
