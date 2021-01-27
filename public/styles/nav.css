@@ -10,15 +10,12 @@ nav {
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  padding: 0 3em;
 }
 
 nav span {
   font-family: "Bungee", sans-serif;
   font-size: 40px;
-}
-
-nav .text {
-  margin: 1.5em;
 }
 
 @media (min-width: 1024px) {
