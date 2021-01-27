@@ -35,9 +35,11 @@
 	<body>
 		<!-- Top nav bar (fixed) -->
 		<nav>
-			<span >tweeter</span>
-
-			<p href=""><strong>Write</strong> a new tweet</p>
+			<span>tweeter</span>
+			<a href="#top">
+				<p><strong>Write</strong> a new tweet</p>
+				<img src="/images/arrows-16px.png" alt="" />
+			</a>
 		</nav>
 
 		<header class="profile">
@@ -53,9 +55,9 @@
 		<!-- Page-specific (main) content here -->
 		<main class="container">
 			<section class="new-tweet">
-				<form method="POST" action="/tweets">
+				<form method="POST" id="tweet-form" class="hidden" action="/tweets">
 					<label for="tweet-text">What are you humming about?</label>
-						<p id="user-input-alert"></p>
+					<p id="user-input-alert" class="hidden"></p>
 					<textarea name="text" maxlength="140" id="tweet-text"></textarea>
 					<div>
 						<button class="btn" type="submit">Tweet</button>
