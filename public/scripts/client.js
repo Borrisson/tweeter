@@ -37,13 +37,11 @@ $("document").ready(function () {
 	};
 
 	const renderTweets = function (tweetDB) {
-		let parsedTweet;
-
 		if (!Array.isArray(tweetDB)) {
 			$("#tweets-container").prepend(createTweetElement(tweetDB));
 		} else {
 			for (let tweetObj of tweetDB) {
-				parsedTweet = createTweetElement(tweetObj);
+				const parsedTweet = createTweetElement(tweetObj);
 				$("#tweets-container").prepend(parsedTweet);
 			}
 		}
