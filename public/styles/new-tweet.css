@@ -30,6 +30,10 @@ form div {
 	box-sizing: content-box;
 }
 
+#user-input-alert {
+	display: none;
+}
+
 .shown {
 	background-color: #dc3545;
 	padding:40px
