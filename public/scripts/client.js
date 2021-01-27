@@ -12,7 +12,7 @@ const escape = function (str) {
 
 $("document").ready(function () {
 	const createTweetElement = function ({ user, content, created_at }) {
-		const postTime = moment.unix(created_at).fromNow();
+		const postTime = moment(created_at).fromNow();
 
 		return `<article class="old-tweets">
     <header class="profile-container">
