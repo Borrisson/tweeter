@@ -3,7 +3,8 @@ nav {
   display: flex;
   height: 120px;
   position: fixed;
-  background-color: #4056a1;
+  background-image: url("../images/header-bg.png");
+  background-color: #d69921;
   color: #FFFF;
   flex-direction: row;
   align-items: center;
@@ -13,8 +14,17 @@ nav {
 
 nav span {
   font-family: "Bungee", sans-serif;
+  font-size: 40px;
 }
 
 nav .text {
   margin: 1.5em;
 }
+
+@media (min-width: 1024px) {
+  nav{
+    background-color: #4056a1;
+    background-image: none;
+  }
+}
+
