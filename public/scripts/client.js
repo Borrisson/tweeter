@@ -54,6 +54,7 @@ $("document").ready(function () {
 			$("#user-input-alert").slideUp(600, function () {});
 			const data = $(this).serialize();
 			text.val("");
+			$("output").text("140");
 			$.ajax("/tweets", { method: "POST", data: data }).done((data) => {
 				loadTweets(true);
 			});
@@ -75,14 +76,14 @@ $("document").ready(function () {
 		});
 	};
 
-	$('#message-button').on('click', function() {
-		if ($('#tweet-form').is(':visible')) {
-			$('#tweet-form').slideUp(600);
+	$("#message-button").on("click", function () {
+		if ($("#tweet-form").is(":visible")) {
+			$("#tweet-form").slideUp(600);
 		} else {
-			$('#tweet-form').slideDown(600);
-			$('textarea').focus();
+			$("#tweet-form").slideDown(600);
+			$("textarea").focus();
 		}
-	})
+	});
 
 	loadTweets();
 });
