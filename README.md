@@ -1,6 +1,6 @@
 # Tweeter Project
 
-Tweeter is a simple, single-page Twitter clone. It is a student development project to touch on new technologies that are foreign to me. These technologies include, but not limited too, AJAX, CSS, jQuery, HTML5 and CSS3.   
+Tweeter is a simple, single-page Twitter clone. It is a student development project to touch on new technologies that are foreign to me. These technologies include, but not limited too, AJAX, CSS, SCSS, jQuery, HTML5 and CSS3.   
 
 
 !["screenshot of the desktop view"](https://github.com/Borrisson/tweeter/blob/master/public/images/preview/tweeter-desktop.png)
