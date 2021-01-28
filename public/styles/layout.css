@@ -69,13 +69,13 @@ main {
           transform: rotate(270deg);
 }
 
-#top-button-arrow {
-  margin: 0px;
-}
-
 #top-button:hover {
   -webkit-animation: pulse 2s infinite;
           animation: pulse 2s infinite;
+}
+
+#top-button-arrow {
+  margin: 0px;
 }
 
 @-webkit-keyframes pulse {

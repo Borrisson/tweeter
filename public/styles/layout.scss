@@ -49,14 +49,14 @@ main {
 	height: 40px;
 	border-radius: 50%;
 	transform: rotate(270deg);
+
+	&:hover {
+		animation: pulse 2s infinite;
+	}
 }
 
 #top-button-arrow {
 	margin: 0px;
-}
-
-#top-button:hover {
-	animation: pulse 2s infinite;
 }
 
 @keyframes pulse {
