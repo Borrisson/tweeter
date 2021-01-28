@@ -55,9 +55,7 @@ $("document").ready(function () {
 		const data = $(this).serialize();
 
 		if (text.val() && text.val().length <= 140) {
-			$(this)
-				.children("#user-input-alert")
-				.slideUp(600);
+			$(this).children("#user-input-alert").slideUp(600);
 
 			text.val("");
 			charCounter.text("140");
