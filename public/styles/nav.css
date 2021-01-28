@@ -1,28 +1,39 @@
 nav {
-	top: 0;
-	display: flex;
-	height: 120px;
-	position: fixed;
-	background-image: url("../images/header-bg.png");
-	background-color: #d69921;
-	color: #ffff;
-	flex-direction: row;
-	align-items: center;
-	justify-content: space-between;
-	width: 100%;
-	padding: 0 3em;
+  top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 120px;
+  position: fixed;
+  background-image: url("../images/header-bg.png");
+  background-color: #d69921;
+  color: #ffff;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  padding: 0 3em;
 }
 
 nav span {
-	font-family: "Bungee", sans-serif;
-	font-size: 40px;
+  font-family: "Bungee", sans-serif;
+  font-size: 40px;
 }
 
 nav img {
-	height: 16px;
-	width: 16px;
-  transform: rotate(90deg);
-  animation: 1s ease-in 1s infinite alternate slide;
+  height: 16px;
+  width: 16px;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  -webkit-animation: 1s ease-in 1s infinite alternate slide;
+          animation: 1s ease-in 1s infinite alternate slide;
 }
 
 nav p {
@@ -30,30 +41,52 @@ nav p {
 }
 
 nav a {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	text-decoration: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-decoration: none;
   color: inherit;
   cursor: default;
 }
 
+@-webkit-keyframes slide {
+  0% {
+    margin-top: 0px;
+  }
+  50% {
+    margin-top: 10px;
+  }
+  100% {
+    margin-top: 0px;
+  }
+}
+
 @keyframes slide {
-	0% {
-		margin-top: 0px;
-	}
-	50% {
-		margin-top: 10px;
-	}
-	100% {
-		margin-top: 0px;
-	}
+  0% {
+    margin-top: 0px;
+  }
+  50% {
+    margin-top: 10px;
+  }
+  100% {
+    margin-top: 0px;
+  }
 }
 
 @media (min-width: 1024px) {
-	nav {
-		background-color: #4056a1;
-		background-image: none;
-	}
+  nav {
+    background-color: #4056a1;
+    background-image: none;
+  }
 }
+/*# sourceMappingURL=nav.css.map */

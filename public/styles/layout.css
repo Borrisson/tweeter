@@ -1,91 +1,123 @@
-/*
- * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
- * https://css-tricks.com/international-box-sizing-awareness-day/
- * Do not modify these two selectors, please
- */
 html {
-	box-sizing: border-box;
-	position: relative;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: relative;
 }
+
 *,
 *:before,
 *:after {
-	box-sizing: inherit;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
 }
 
 /*
  * Global layout stuff
  */
-
 body {
-	display: flex;
-	flex-direction: column;
-	color: #545149;
-	background-color: #f4f1ec;
-	font-size: 24px;
-	font-family: "Source Sans Pro", sans-serif;
-	justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  color: #545149;
+  background-color: #f4f1ec;
+  font-size: 24px;
+  font-family: "Source Sans Pro", sans-serif;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
-
 .container {
-	display: flex;
-	flex-direction: column;
-	width: 90%;
-	align-self: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 90%;
+  -ms-flex-item-align: center;
+      align-self: center;
 }
 
 main {
-	margin-top: 30px;
+  margin-top: 30px;
 }
 
 #top-button {
-	justify-content: center;
-	align-items: center;
-	display: none;
-	position: fixed;
-	bottom: 3vh;
-	right: 3vw;
-	z-index: 99;
-	background-color: red;
-	cursor: pointer;
-	width: 40px;
-	height: 40px;
-	border-radius: 50%;
-	transform: rotate(270deg);
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: none;
+  position: fixed;
+  bottom: 3vh;
+  right: 3vw;
+  z-index: 99;
+  background-color: red;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  -webkit-transform: rotate(270deg);
+          transform: rotate(270deg);
 }
 
 #top-button-arrow {
-	margin: 0px;
+  margin: 0px;
 }
 
 #top-button:hover {
-	animation: pulse 2s infinite;
+  -webkit-animation: pulse 2s infinite;
+          animation: pulse 2s infinite;
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-transform: scale(0.9) rotate(270deg);
+            transform: scale(0.9) rotate(270deg);
+  }
+  70% {
+    -webkit-transform: scale(1) rotate(270deg);
+            transform: scale(1) rotate(270deg);
+  }
+  100% {
+    -webkit-transform: scale(0.9) rotate(270deg);
+            transform: scale(0.9) rotate(270deg);
+  }
 }
 
 @keyframes pulse {
-	0% {
-		transform: scale(0.9) rotate(270deg);
-	}
-
-	70% {
-		transform: scale(1) rotate(270deg);
-	}
-
-	100% {
-		transform: scale(0.9) rotate(270deg); 
-	}
+  0% {
+    -webkit-transform: scale(0.9) rotate(270deg);
+            transform: scale(0.9) rotate(270deg);
+  }
+  70% {
+    -webkit-transform: scale(1) rotate(270deg);
+            transform: scale(1) rotate(270deg);
+  }
+  100% {
+    -webkit-transform: scale(0.9) rotate(270deg);
+            transform: scale(0.9) rotate(270deg);
+  }
 }
 
 @media (min-width: 1024px) {
-	body {
-		flex-direction: row;
-		margin-top: 200px;
-	}
-	main {
-		margin: 0 150px 0 0;
-	}
+  body {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    margin-top: 200px;
+  }
+  main {
+    margin: 0 150px 0 0;
+  }
 }
+/*# sourceMappingURL=layout.css.map */
