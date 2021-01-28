@@ -49,12 +49,19 @@ $("document").ready(function () {
 
 	$("form").on("submit", function (e) {
 		e.preventDefault();
-		let text = $("textarea");
+
+		let text = $(this).children("textarea");
+		let charCounter = $(this).find("output");
+		const data = $(this).serialize();
+
 		if (text.val() && text.val().length <= 140) {
-			$("#user-input-alert").slideUp(600, function () {});
-			const data = $(this).serialize();
+			$(this)
+				.children("#user-input-alert")
+				.slideUp(600);
+
 			text.val("");
-			$("output").text("140");
+			charCounter.text("140");
+
 			$.ajax("/tweets", { method: "POST", data: data }).done((data) => {
 				loadTweets(true);
 			});
@@ -62,7 +69,7 @@ $("document").ready(function () {
 			$("#user-input-alert")
 				.addClass("shown")
 				.text("Please write a message between 1 and 140 characters")
-				.slideDown(600, function () {});
+				.slideDown(600);
 		}
 	});
 
