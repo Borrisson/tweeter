@@ -2,13 +2,6 @@
 
 Tweeter is a simple, single-page Twitter clone. It is a student development project to touch on new technologies that are foreign to me. These technologies include, but not limited to, AJAX, CSS, SCSS, jQuery, HTML5 and CSS3.   
 
-
-!["screenshot of the desktop view"](https://github.com/Borrisson/tweeter/blob/master/public/images/preview/tweeter-desktop.png)
-!["screenshot of the mobile view"](https://github.com/Borrisson/tweeter/blob/master/public/images/preview/tweeter-mobile.png)
-!["screenshot of the create new message button"](https://github.com/Borrisson/tweeter/blob/master/public/images/preview/textarea-after-click.png)
-
-
-
 ## Getting Started
 
 1. Fork this repository, then clone your fork of this repository.
@@ -22,3 +15,12 @@ Tweeter is a simple, single-page Twitter clone. It is a student development proj
 - Chance
 - Express
 - Node 5.10.x or above
+
+!["screenshot of the desktop view"](https://github.com/Borrisson/tweeter/blob/master/public/images/preview/tweeter-desktop.png)
+*screenshot of the desktop view*
+!["screenshot of the mobile view"](https://github.com/Borrisson/tweeter/blob/master/public/images/preview/tweeter-mobile.png)
+*screenshot of the mobile view*
+!["screenshot of the create new message button"](https://github.com/Borrisson/tweeter/blob/master/public/images/preview/textarea-after-click.png)
+*screenshot of the create new message button*
+
+
